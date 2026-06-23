@@ -5,10 +5,12 @@
 # url: https://github.com/canbekcan/discourse-bekcan-academic-courses
 
 after_initialize do
-  # Replace invalid plugin_loaded? with registry check
-  if Discourse.plugins.find { |p| p.name == "discourse-academic-profile" }
+  # Fix: Dependency check via registry lookup to prevent load order crashes
+  if Discourse.plugins.find { |p| p.name == "discourse-bekcan-academic-profile" }
     add_to_serializer(:user, :academic_courses) do
       object.academic_courses
     end
+    
+    DiscoursePluginRegistry.serialized_current_user_fields << "academic_courses"
   end
 end
