@@ -1,8 +1,8 @@
-# name: discourse-academic-courses
+# name: discourse-bekcan-academic-courses
 # about: Academic Course Management Plugin
 # version: 0.1
 # authors: Can Bekcan
-# url: https://github.com/canbekcan/discourse-academic-courses
+# url: https://github.com/canbekcan/discourse-bekcan-academic-courses
 
 after_initialize do
   # Replace invalid plugin_loaded? with registry check
